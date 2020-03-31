@@ -115,3 +115,10 @@ WHERE Messages.useridfrom IN(SELECT UserID
       Messages.useridto IN(SELECT UserID
                            FROM Users
                            WHERE Users.Username = 'luke.tollefson');
+
+\echo 'Find all of steven.glasford"s listings'
+SELECT *
+FROM Products
+WHERE Products.UserID IN (SELECT UserID
+                          FROM Users
+                          WHERE Username = 'steven.glasford');
